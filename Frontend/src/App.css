@@ -1,0 +1,71 @@
+.home {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.create_form_input {
+  width: 300px;
+  padding: 10px;
+  border-bottom: 2px solid black; /* Specify color */
+  outline: none;
+}
+
+.create_form_button {
+  padding: 10px;
+  background-color: black;
+  color: white;
+  cursor: pointer;
+  border: none; /* Remove default button border */
+  transition: background-color 0.3s ease; /* Smooth hover effect */
+}
+
+.create_form_button:hover {
+  background-color: white; /* Change background on hover */
+  color: black; /* Invert text color on hover */
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  width: 345px;
+  justify-content: space-between;
+  background-color: black;
+  color: white;
+  height: 35px;
+  padding: 2px 5px;
+  margin-top: 2px;
+  border-radius: 4px; /* Slight rounding for aesthetics */
+}
+
+.checkbox {
+  display: flex; /* Fix: Ensure checkbox content is visible and properly aligned */
+  align-items: center;
+}
+
+.checkbox .icon {
+  margin-right: 5px;
+  font-size: 20px; /* Adjust size for better visibility */
+  color: white; /* Icon color */
+}
+
+.task div span {
+  margin: 0px 5px 0px 4px;
+}
+
+.task div .icon {
+  cursor: pointer;
+  font-size: 18px; /* Adjust size */
+  color: red; /* Icon color for delete */
+  transition: transform 0.2s ease; /* Smooth effect on hover */
+}
+
+.task div .icon:hover {
+  transform: scale(1.2); /* Enlarge slightly on hover */
+}
+
+.line-through {
+  text-decoration: line-through;
+  opacity: 0.7; /* Reduce opacity for completed tasks */
+}
+

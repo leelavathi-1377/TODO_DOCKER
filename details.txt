@@ -1,0 +1,51 @@
+#How to run the repository
+
+1. clone the repository
+
+https://github.com/leelavathi-1377/TODO_DOCKER.git
+
+2. install the dependdencies in frontend and backend 
+
+npm install
+
+#Imperative Mode
+
+3. Build the docker application images(backend, frontend)
+
+docker build -it <dockerhub_acc_name>/<image_name> . 
+
+4. pull the mongo image or create on your own
+
+docker pull mongo:5 
+
+check images build or not 
+
+docker images 
+
+5. create network 
+
+docker network create <network_name>
+
+5. Run the containers 
+
+docker run -d -it -p 27017:27017 --network=<network_name> --name=<container_name> <mongo_image_name>
+docker run -d -it -p 3000:3000 --network=<network_name> --name=<container_name> <backend_image_name>
+docker run -d -it -p 4000:4000 --network=<network_name> --name=<container_name> <frontend_image_name>
+
+check containers running or not
+
+docker ps 
+
+6. Run the frontend application in "http://localhost:4000".
+
+
+#Configurative Mode
+
+1. After building the images
+
+2. Run the containers
+
+docker compose up --build 
+
+3. Run the frontend application in "http://localhost:4000".
+
