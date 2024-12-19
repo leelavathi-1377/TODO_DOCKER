@@ -24,8 +24,8 @@ jobs:
       - name: Verify Docker Compose File Exists
         run: |
           ls -la
-          if [ ! -f "docker-compose.yml" ]; then
-            echo "Error: docker-compose.yml not found in root directory!"
+          if [ ! -f "docker-compose.yaml" ]; then
+            echo "Error: docker-compose.yaml not found in root directory!"
             exit 1
           fi
 
