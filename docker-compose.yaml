@@ -1,7 +1,7 @@
 version: '3.8'
 services:
   mongo:
-    image: mongo:5
+    image: ${MONGO_IMAGE}
     container_name: mongo
     ports:
       - "27017:27017"
@@ -11,19 +11,19 @@ services:
       - app_network
 
   backend:
-    image: leelavahi137/backend:latest              
+    image: ${BACKEND_IMAGE}              
     container_name: backend
     ports:
       - "3000:3000"
     environment:
-      - MONGO_URL=mongodb://mongo/myapp
+      - MONGO_URL= ${MONGO_URL}
     depends_on:
       - mongo
-    networks:
+    networks:  
       - app_network
 
   frontend:
-    image: leelavahi137/frontend:latest
+    image: ${FRONTEND_IMAGE}
     container_name: frontend
     ports:
       - "4000:4000"
