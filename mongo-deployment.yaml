@@ -1,4 +1,5 @@
-apiVersion: apps/v1
+# Use statefulset for database instead of the deployment file.
+apiVersion: apps/v1        
 kind: Deployment
 metadata:
   name: mongodb-deployment

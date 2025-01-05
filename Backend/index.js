@@ -10,7 +10,7 @@ app.use(cors())
 app.use(express.json())
 
 app.use(cors({
-    origin: '*', // Allow all origins. Use a specific origin for better security in production.
+    origin: '*', 
     methods: 'GET,POST,PUT,DELETE',
     allowedHeaders: 'Content-Type,Authorization'
 }));
@@ -31,15 +31,12 @@ mongoose.connect(mongoUrl , {
 })
 
 app.get('/', (req, res) => {
-    console.log("hellllloooooooo")
     res.send('Hello, World!');
   });
 
   
 app.post('/add' , async(req, res) => {
     const task = req.body.task
-    console.log("adding................")
-    console.log(req.body.task, "????????????????????????????")
     if (!task) {
         console.log('Task is required!')
         return res.status(400).json({ message: 'Task is required' });
@@ -53,7 +50,6 @@ app.post('/add' , async(req, res) => {
 })
 
 app.get('/get' , async(req, res)=> {
-    console.log("getting...................")
     const result = await ToDoModel.find()
     
     console.log(result)
